@@ -1,0 +1,36 @@
+/* Add this to your existing style.css or replace it */
+:root {
+    --primary: #3b82f6;
+    --secondary: #6366f1;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+.hero-buttons { margin-top: 25px; display: flex; gap: 15px; justify-content: center; }
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    background: var(--primary);
+    color: white;
+}
+
+.btn.secondary { background: transparent; border: 2px solid var(--primary); }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+.education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 800px; margin: 0 auto; }
+.grade { color: #60a5fa; font-weight: bold; margin-top: 10px; }
+
+.skills-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 800px; margin: 0 auto; }
+.skills-container span {
+    background: var(--glass);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+}
+
+.date { font-size: 0.85rem; color: #94a3b8; display: block; margin-bottom: 10px; }
+ul { font-size: 0.9rem; padding-left: 20px; color: #cbd5e1; }
