@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Singh | Elite Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --blue: #2874f0; --orange: #fb641b; --dark: #000; --overlay: rgba(0, 0, 0, 0.96); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: #fff; overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* --- 1. STYLISH NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%; height: 75px;
+            background: var(--dark); display: flex;
+            justify-content: space-between; align-items: center;
+            padding: 0 5%; z-index: 3000;
+            border-bottom: 3px solid var(--blue);
+        }
+        .logo { color: #fff; font-weight: 900; font-size: 1.6rem; letter-spacing: 2px; }
+        .menu-btn { color: #fff; font-size: 2rem; cursor: pointer; transition: 0.3s; }
+        .menu-btn:hover { color: var(--blue); transform: rotate(90deg); }
+
+        /* --- 2. LUXURY MOBILE OVERLAY --- */
+        .mobile-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--overlay); backdrop-filter: blur(15px);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); transform: translateY(-100%); z-index: 2500;
+        }
+        .mobile-overlay.active { transform: translateY(0); }
+        .mobile-overlay a {
+            color: #fff; text-decoration: none; font-size: 2.2rem; font-weight: 900;
+            text-transform: uppercase; margin: 15px 0; letter-spacing: 4px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5); transition: 0.3s;
+        }
+        .mobile-overlay a:hover { color: var(--blue); transform: scale(1.1); }
+
+        /* --- 3. SECTION CONTENT --- */
+        section { min-height: 100vh; padding: 120px 8% 80px 8%; display: flex; align-items: center; border-bottom: 1px solid #eee; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 60px; }
+        
+        .text-box { flex: 1.2; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; color: var(--blue); line-height: 1; margin-bottom: 20px; }
+        h2 { font-size: 2.5rem; margin-bottom: 25px; border-left: 10px solid var(--blue); padding-left: 20px; font-weight: 900; color: #111; }
+        h3 { font-size: 1.8rem; color: var(--blue); font-weight: 700; margin-bottom: 15px; }
+        p { font-size: 1.05rem; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 20px; }
+
+        /* --- 4. IMAGE FIX (NO-CUT) --- */
+        .image-box { flex: 0.8; display: flex; justify-content: center; align-items: center; }
+        .image-box img { 
+            width: 100%; max-width: 450px; height: auto; 
+            border-radius: 8px; box-shadow: 20px 20px 0px var(--blue);
+            object-fit: contain;
+        }
+
+        /* --- 5. INTERACTIVE EXPERIENCE TABS --- */
+        .tab-nav { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .tab-btn { 
+            padding: 14px 28px; background: #f0f0f0; border: none; cursor: pointer; 
+            font-weight: 700; border-radius: 4px; transition: 0.3s; text-transform: uppercase;
+        }
+        .tab-btn.active { background: var(--blue); color: #fff; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; list-style: none; }
+        .skill-item { background: #f8f9fa; padding: 15px; border-left: 5px solid var(--orange); font-size: 0.9rem; font-weight: 700; }
+
+        .btn-action {
+            background: var(--orange); color: #fff; padding: 18px 45px;
+            text-decoration: none; font-weight: 900; border-radius: 4px;
+            display: inline-block; text-transform: uppercase; transition: 0.3s;
+        }
+        .btn-action:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(251, 100, 27, 0.4); }
+
+        /* --- 6. MOBILE RESPONSIVE FIX --- */
+        @media (max-width: 1100px) {
+            .container { flex-direction: column !important; text-align: center; }
+            .image-box { order: -1; width: 100%; }
+            .image-box img { width: 90%; max-width: 320px; height: 350px; box-shadow: 10px 10px 0px var(--blue); }
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; border-left: none; padding-left: 0; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .tab-nav { justify-content: center; }
+        }
+
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: #fff;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 35px; text-decoration: none; z-index: 2000;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GAURAV</div>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </div>
+    </nav>
+
+    <div class="mobile-overlay" id="mobileOverlay">
+        <a href="#home" onclick="toggleMenu()">Origins</a>
+        <a href="#experience" onclick="toggleMenu()">Experience</a>
+        <a href="#blueprint" onclick="toggleMenu()">Blueprint</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+        <a href="https://www.linkedin.com/in/gauravsinghab98/" target="_blank" style="font-size: 1.2rem; color: var(--blue); margin-top: 30px;">
+            <i class="fab fa-linkedin"></i> LinkedIn Profile
+        </a>
+    </div>
+
+    <section id="home">
+        <div class="container">
+            <div class="text-box">
+                <h1>Gaurav Singh</h1>
+                <h2>The Origin Story</h2>
+                <p>I am Gaurav Sanjay Singh, a results-obsessed Senior Operation Executive at Flipkart. My professional identity is built on a high-performance hybrid—engineered with the technical precision of a Computer Engineer and refined by the strategic vision of an MBA in Marketing. Born in Jaunpur, UP, and raised in the industrial landscape of Ahmedabad, I have navigated a professional journey that bridges massive backend data with human-centric business growth.</p>
+                <p>My career is defined by the belief that operations are the heartbeat of any organization. With over 2.5 years of experience in high-stakes corporate environments, I have mastered the art of Lead Engineering, CRM Management, and Market Intelligence. My time at TACTPRO Consulting and Arvind Smartspaces taught me that true business success comes from re-engineering raw data into meaningful connections and streamlined workflows.</p>
+                <p>Now based in Bangalore, I lead operational workflows for India's largest e-commerce giant. I specialize in identifying systemic bottlenecks and transforming them into growth opportunities. I am a builder of logic and a driver of market strategy, dedicated to ensuring that technology and business goals move in perfect synchronization. If you are looking for an executive who speaks both the language of developers and the language of stakeholders, you have found the right profile.</p>
+                <a href="Gaurav_Singh_Resume.pdf" target="_blank" class="btn-action">Acquire CV</a>
+            </div>
+            <div class="image-box">
+                <img src="profile.jpeg" alt="Gaurav Singh">
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" style="background: #fafafa;">
+        <div class="container" style="flex-direction: column; align-items: flex-start;">
+            <h2>The Professional Path</h2>
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="openTab(event, 'flipkart')">Flipkart</button>
+                <button class="tab-btn" onclick="openTab(event, 'arvind')">Arvind Smartspaces</button>
+                <button class="tab-btn" onclick="openTab(event, 'tactpro')">Tactpro Consulting</button>
+            </div>
+
+            <div id="flipkart" class="tab-content active">
+                <h3>Senior Operation Executive</h3>
+                <p>At Flipkart, I manage the operational pulse of India's biggest e-commerce marketplace. My role focuses on the total synchronization of logistics data and daily business workflows. I spend my days identifying fulfillment bottlenecks and re-engineering them for speed. My goal is to ensure that every technical update translates into a better customer experience.</p>
+                <p>I collaborate across departments to scale operations effectively. Using my technical background, I bridge the gap between back-end developers and front-end business teams. By optimizing CRM workflows and vendor data management, I ensure that Flipkart remains a leader in operational efficiency.</p>
+                <ul class="skills-grid">
+                    <li class="skill-item">Operations Command</li>
+                    <li class="skill-item">Process Optimization</li>
+                    <li class="skill-item">Logistics Synchronization</li>
+                    <li class="skill-item">Strategic Growth</li>
+                </ul>
+            </div>
+
+            <div id="arvind" class="tab-content">
+                <h3>Senior Executive - Presales</h3>
+                <p>During my tenure at Arvind Smartspaces, I led the presales architecture for high-value real estate portfolios. I was responsible for the entire lead lifecycle, ensuring that every marketing inquiry was transformed into a strategic sales opportunity. I implemented new CRM tracking models that significantly increased lead conversion rates.</p>
+                <p>By aligning marketing spend with real-world sales capacity, I helped re-engineer the way the company viewed its data. I moved the organization toward a real-time tracking environment, reducing response times by over 40% and proving that data-driven communication is the most effective tool in luxury sales.</p>
+                <ul class="skills-grid">
+                    <li class="skill-item">CRM Architecture</li>
+                    <li class="skill-item">Sales Funnel Engineering</li>
+                    <li class="skill-item">Strategic Acquisition</li>
+                    <li class="skill-item">Market Penetration</li>
+                </ul>
+            </div>
+
+            <div id="tactpro" class="tab-content">
+                <h3>Lead Generation Associate</h3>
+                <p>At Tactpro Consulting, I applied Computer Engineering logic to the art of B2B networking. I developed cold outreach methodologies that utilized database automation to increase outreach efficiency. My focus was on building high-intent lead pipelines for specialized business services through rigorous market research.</p>
+                <p>I conducted deep competitive intelligence to identify market gaps for our clients. By building systemic research frameworks, I enabled the team to focus on high-level strategy rather than manual tasks. This role set the stage for my career, proving that a technical approach to marketing creates unparalleled results.</p>
+                <ul class="skills-grid">
+                    <li class="skill-item">B2B Networking</li>
+                    <li class="skill-item">Cold Outreach Mastery</li>
+                    <li class="skill-item">Competitive Analysis</li>
+                    <li class="skill-item">Database Management</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="blueprint">
+        <div class="container">
+            <div class="text-box">
+                <h2>Academic Blueprint</h2>
+                <p>My academic foundation is the "Blueprint" of my professional hybrid profile. I hold an MBA in Marketing from Indus University, Ahmedabad, with a distinguished 8.54 CGPA. Here, I mastered consumer psychology and the strategic frameworks of market acquisition. I learned how to move a brand from a concept to a market leader through data-driven storytelling.</p>
+                <p>Before the MBA, I earned my B.E. in Computer Engineering from GTU (7.75 CGPA). This technical mastery taught me the "How" behind every system. I mastered algorithmic thinking and data logic, which I now use daily to optimize business operations. Together, these degrees allow me to act as a bridge between the technical and business worlds.</p>
+            </div>
+            <div class="image-box">
+                <img src="INDUS.jpeg" alt="Education">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background: #f9f9f9;">
+        <div class="container" style="flex-direction: column; text-align: center;">
+            <h2>Establish Connection</h2>
+            <form action="https://formspree.io/f/gauravsinghab80@gmail.com" method="POST" style="width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 20px; margin-top: 30px;">
+                <input type="text" id="vName" name="name" placeholder="Full Name" required style="padding: 18px; border: 1px solid #ddd; border-radius: 4px;">
+                <input type="tel" name="phone" placeholder="Mobile Number" required style="padding: 18px; border: 1px solid #ddd; border-radius: 4px;">
+                <textarea name="message" placeholder="Proposal/Requirement" rows="4" required style="padding: 18px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                <button type="submit" class="btn-action">Establish Connection</button>
+            </form>
+        </div>
+    </section>
+
+    <a href="javascript:void(0)" onclick="openWA()" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function toggleMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            const icon = document.getElementById('menuIcon');
+            overlay.classList.toggle('active');
+            if (overlay.classList.contains('active')) {
+                icon.classList.remove('fa-bars'); icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times'); icon.classList.add('fa-bars');
+            }
+        }
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        function openWA() {
+            let name = document.getElementById('vName').value || "Guest";
+            window.open("https://wa.me/918140820306?text=Hey Gaurav, this is " + name + ". I'd like to connect.", "_blank");
+        }
+    </script>
+</body>
+</html>
