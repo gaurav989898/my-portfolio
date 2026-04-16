@@ -3,90 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaurav Singh | Sr. Operation Executive</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Gaurav Singh | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --blue: #2874f0; --orange: #fb641b; --dark: #111; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: #fff; scroll-behavior: smooth; color: #333; }
+        
+        /* NAVIGATION */
+        nav { background: var(--dark); padding: 18px 5%; display: flex; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--blue); }
+        .logo { color: #fff; font-weight: 900; font-size: 1.5rem; }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { color: #ccc; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; }
+        .nav-links a:hover { color: var(--blue); }
+        .social-nav a { color: #fff; margin-left: 15px; font-size: 1.2rem; transition: 0.3s; }
+        .social-nav a:hover { color: var(--blue); transform: scale(1.2); }
+
+        /* SECTION LAYOUT (The Split-Screen You Liked) */
+        section { min-height: 100vh; display: flex; align-items: center; border-bottom: 1px solid #eee; overflow: hidden; }
+        .split { display: flex; width: 100%; min-height: 100vh; }
+        .reverse { flex-direction: row-reverse; }
+
+        /* IMAGE SIDE - NO BORDER & NO HAIR CUTTING */
+        .image-side { flex: 1; display: flex; justify-content: center; align-items: center; background: #fff; overflow: hidden; }
+        .image-side img { max-width: 100%; max-height: 100vh; object-fit: contain; border: none; }
+
+        /* TEXT SIDE */
+        .text-side { flex: 1.2; padding: 100px 8%; display: flex; flex-direction: column; justify-content: center; }
+        h1 { font-size: 4rem; color: var(--blue); line-height: 1.1; margin-bottom: 20px; font-weight: 900; }
+        h2 { font-size: 2.8rem; color: var(--dark); margin-bottom: 25px; border-left: 8px solid var(--blue); padding-left: 20px; text-transform: uppercase; }
+        p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+
+        /* SKILLS HUB */
+        .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .skill-item { background: var(--blue); color: #fff; padding: 12px; border-radius: 4px; font-weight: 700; text-align: center; font-size: 0.9rem; }
+
+        /* BUTTONS & FORM */
+        .btn-orange { background: var(--orange); color: #fff; padding: 15px 35px; text-decoration: none; font-weight: 900; border: none; cursor: pointer; border-radius: 4px; width: fit-content; text-transform: uppercase; display: inline-block; }
+        .contact-form { display: flex; flex-direction: column; gap: 15px; width: 100%; }
+        .contact-form input, .contact-form textarea { padding: 15px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; background: #f9f9f9; }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; }
+
+        @media (max-width: 1000px) { .split, .reverse { flex-direction: column !important; } .image-side { height: 40vh; } .text-side { padding: 40px 20px; } h1 { font-size: 2.5rem; } }
+    </style>
 </head>
 <body>
-    <div class="background-blobs"></div>
 
     <nav>
-        <div class="logo">GS</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
+        <div class="logo">GAURAV</div>
+        <ul class="nav-links">
+            <li><a href="#home">Origins</a></li>
+            <li><a href="#education">Blueprint</a></li>
+            <li><a href="#skills">Mastery</a></li>
+            <li><a href="#contact">Connect</a></li>
         </ul>
+        <div class="social-nav">
+            <a href="https://www.linkedin.com/in/gauravsinghab98/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="glass-card">
-            <img src="profile.jpg" alt="Gaurav Singh" class="profile-img">
-            <h1>Gaurav Sanjay Singh</h1>
-            <p class="motto">"Bridging the gap between technical logic and market strategy."</p>
-            <div class="hero-buttons">
-                <a href="Gaurav_Singh_Resume.pdf" class="btn" download>Download Resume</a>
-                <a href="mailto:gauravsinghab80@gmail.com" class="btn secondary">Contact Me</a>
+    <section id="home">
+        <div class="split">
+            <div class="image-side">
+                <img src="profile.jpeg" alt="Gaurav Singh">
             </div>
-        </div>
-    </header>
-
-    <section id="experience">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="glass-card">
-            <div class="job">
-                <h3>Sr. Operation Executive</h3>
-                <span class="company">Flipkart</span>
-                <span class="date">Present</span>
-            </div>
-            <div class="job">
-                <h3>Presales Executive - Real Estate</h3>
-                <span class="company">Arvind Smartspaces (Key-CMS)</span>
-                <span class="date">Dec 2024 - Present</span>
-                <ul>
-                    <li>Converting leads into qualified prospects and coordinating site visits[cite: 28, 29].</li>
-                    <li>Managing CRM records and handling inbound/outbound calls[cite: 29, 30].</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Business Development & Social Media Executive</h3>
-                <span class="company">TACTPRO Consulting Pvt Ltd</span>
-                <span class="date">May 2023 - Oct 2024</span>
-                <ul>
-                    <li>Generated leads via LinkedIn, Upwork, and Sales Navigator[cite: 17].</li>
-                    <li>Developed social media strategies to enhance brand visibility[cite: 15, 22].</li>
-                </ul>
+            <div class="text-side">
+                <h1>Gaurav <br>Sanjay Singh</h1>
+                <h2>The Origin Story</h2>
+                <p>I am Gaurav Sanjay Singh, a results-obsessed Senior Operation Executive at Flipkart. My professional identity is a hybrid—engineered with technical logic and refined by market strategy. Born in Jaunpur, UP, and raised in the industrial heart of Ahmedabad, I have navigated a journey that bridges the gap between massive backend data and human-centric business growth.</p>
+                <p>With a career spanning over 2.5 years, I have moved through the ranks of TACTPRO Consulting and Arvind Smartspaces, mastering the art of high-stakes Lead Generation and Presales. Today, based in Bangalore, I manage complex operational workflows for India's biggest e-commerce giant, ensuring that technology and business goals move in perfect synchronization.</p>
+                <a href="Gaurav_Singh_Resume.pdf" class="btn-orange" download>Aquire CV</a>
             </div>
         </div>
     </section>
 
     <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="education-grid">
-            <div class="glass-card small">
-                <h4>MBA - Marketing</h4>
-                <p>Indus University | 2021 - 2023</p>
-                <p class="grade">CGPA: 8.54</p>
+        <div class="split reverse">
+            <div class="image-side">
+                <img src="INDUS.jpeg" alt="Education Qualifications">
             </div>
-            <div class="glass-card small">
-                <h4>B.E. Computer Engineering</h4>
-                <p>Amiraj College (GTU) | 2015 - 2019</p>
-                <p class="grade">CGPA: 7.75</p>
+            <div class="text-side">
+                <h2>Academic Blueprints</h2>
+                <p><strong>MBA in Marketing:</strong> I hold an MBA from <strong>Indus University</strong>, Ahmedabad (2021-2023). Graduating with a distinguished <strong>CGPA of 8.54</strong>, my focus was on the intersection of consumer psychology and strategic acquisition. I decoded the data-driven patterns that drive brand growth.</p>
+                <p><strong>B.E. Computer Engineering:</strong> My technical journey began with a Bachelor of Engineering from <strong>Amiraj College, GTU</strong> (2015-2019). Achieving a <strong>7.75 CGPA</strong>, I spent four years mastering algorithmic thinking and systemic logic, which I now use to solve complex business operations.</p>
+                <p>This dual-pillar profile allows me to communicate with tech developers and marketing stakeholders with equal fluency, making me a unique asset in high-pressure operational environments.</p>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-container">
-            <span>Lead Generation</span> <span>Cold Calling</span> <span>CRM Management</span> 
-            <span>Social Media Marketing</span> <span>Market Research</span> <span>Sales Strategy</span>
+        <div class="split">
+            <div class="image-side">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026" alt="Mastery">
+            </div>
+            <div class="text-side">
+                <h2>The Mastery Hub</h2>
+                <p>My career across Flipkart and Arvind Smartspaces has allowed me to develop a robust toolkit of skills that bridge technical and business domains.</p>
+                <div class="skills-container">
+                    <div class="skill-item">Operations Command</div>
+                    <div class="skill-item">Lead Engineering</div>
+                    <div class="skill-item">CRM Architecture</div>
+                    <div class="skill-item">Strategic Growth</div>
+                    <div class="skill-item">Competitor Analysis</div>
+                    <div class="skill-item">B2B Networking</div>
+                    <div class="skill-item">Market Intelligence</div>
+                    <div class="skill-item">Data Logic</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Gaurav Singh | Born in Jaunpur, Based in Bangalore</p>
-    </footer>
+    <section id="contact">
+        <div class="split reverse">
+            <div class="image-side">
+                <img src="https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?q=80&w=2000" alt="Connect">
+            </div>
+            <div class="text-side">
+                <h2>Establish Connection</h2>
+                <p>Drop your details below to start a professional conversation and see how we can build the future together.</p>
+                <form action="https://formspree.io/f/gauravsinghab80@gmail.com" method="POST" class="contact-form">
+                    <input type="text" id="vName" name="name" placeholder="Identification (Your Name)" required>
+                    <input type="tel" name="phone" placeholder="Mobile Number" required>
+                    <textarea name="message" placeholder="Proposal Details" rows="4" required></textarea>
+                    <button type="submit" class="btn-orange">Establish Connection</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="javascript:void(0)" onclick="openWA()" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function openWA() {
+            let name = document.getElementById('vName').value || "Guest";
+            let msg = "Hey Gaurav this is " + name + ", I would like to know more about you.";
+            window.open("https://wa.me/918140820306?text=" + encodeURIComponent(msg), "_blank");
+        }
+    </script>
 </body>
 </html>
